@@ -5,7 +5,9 @@ def call(Closure customSteps) {
             stage('Pipeline Lib') {
                 steps {
                     echo 'Iniciando pipeline pela lib...'
-                    customSteps()
+                    script {
+                        customSteps()
+                    }
                 }
             }
         }
