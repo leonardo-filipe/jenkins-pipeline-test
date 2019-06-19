@@ -1,10 +1,12 @@
-def call(Closure steps) {
+def call(Closure customSteps) {
     pipeline {
         agent any
         stages {
             stage('Pipeline Lib') {
-                echo 'Iniciando pipeline pela lib...'
-                steps()
+                steps {
+                    echo 'Iniciando pipeline pela lib...'
+                    customSteps()
+                }
             }
         }
     }
